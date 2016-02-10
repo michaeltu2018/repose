@@ -3,11 +3,11 @@
 <system-model xmlns="http://docs.openrepose.org/repose/system-model/v2.0">
     <repose-cluster id="repose">
         <nodes>
-            <node id="repose_node1" hostname="100.73.164.254 " http-port="8080"/>
-            <node id="node2" hostname="localhost" http-port="8080"/>
+            <node id="repose_node1" hostname="172.17.0.2" http-port="8080"/>
+            <node id="node2" hostname="172.17.0.3" http-port="8080"/>
         </nodes>
         <filters>
-            <filter name="ip-identity"/>
+	    <filter name="ip-identity" />
             <filter name="uri-stripper" uri-regex=".*/openshift.*"/>
             <filter name="uri-stripper" uri-regex=".*/nova.*"/>
             <filter name="destination-router" uri-regex=".*/openshift.*" configuration="destination-router.cfg2.xml" />
@@ -15,7 +15,7 @@
             <filter name="rate-limiting"/>
         </filters>
         <services>
-            <service name="dist-datastore">
+             <service name="dist-datastore"/>
         </services>
         <destinations>
             <endpoint id="nova" protocol="http" hostname="jsonplaceholder.typicode.com" root-path="/" port="80" default="true"/>
