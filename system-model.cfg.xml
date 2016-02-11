@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- To configure Repose see: http://wiki.openrepose.org/display/REPOSE/Configuration -->
+<system-model xmlns="http://docs.openrepose.org/repose/system-model/v2.0">
+    <repose-cluster id="repose">
+        <nodes>
+            <node id="repose_node1" hostname="localhost" http-port="8080"/>
+            <node id="node2" hostname="localhost" http-port="8081"/>
+        </nodes>
+        <filters>
+	    <filter name="ip-identity" />
+            <filter name="uri-stripper" uri-regex=".*/openshift.*"/>
+            <filter name="uri-stripper" uri-regex=".*/nova.*"/>
+            <filter name="destination-router" uri-regex=".*/openshift.*" configuration="destination-router.cfg2.xml" />
+            <filter name="destination-router" uri-regex=".*/nova.*" configuration="destination-router.cfg.xml" />
+            <filter name="rate-limiting"/>
+        </filters>
+        <services>
+             <service name="dist-datastore"/>
+        </services>
+        <destinations>
+            <endpoint id="nova" protocol="http" hostname="jsonplaceholder.typicode.com" root-path="/" port="80" default="true"/>
+            <endpoint id="openshift" protocol="http" hostname="thomas-bayer.com" root-path="/" port="80" default="false"/>
+            <!--endpoint id="openshift" protocol="http" hostname="thomas-bayer.com" root-path="/sqlrest/CUSTOMER" port="80" default="false"/-->
+        </destinations>
+    </repose-cluster>
+ 
+    <!-- Please set the enabled attribute to true to send us usage updates and help us improve Repose! -->
+    <phone-home enabled="false"
+                origin-service-id="your-service"
+                contact-email="your@service.com"/>
+</system-model>
