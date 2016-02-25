@@ -6,27 +6,19 @@
  *      2. http:/jsonplaceholder.typicode.com:80/rate2, which is 3 times per minute
  *      3. http:/jsonplaceholder.typicode.com:80/*, which is 1 time per second
  * 
- * The rate limit setting for ".*/openshift.*" is similar to ".*/nova.*"
  */
 
 {
 
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
-  "gatewayIp": "100.0.0.1 ;will be retrieved from scalr farm",
-  "gatewayPortNumber": 8080,
   "gatewaySubDir":[
-      {"nova": ".*/nova.*"},
-      {"openshift": ".*/openshift.*"}
+      {"nova": ".*/nova.*"}
     ],
   "rateLimiting":[
     {"uri-regex":".*/nova/rate1.*", "http-methods":"POST PUT GET DELETE", "unit": "hour", "value": 5}, 
     {"uri-regex":".*/nova/rate2.*", "http-methods":"GET", "unit": "minute", "value": 3},
-    {"uri-regex":".*/nova.*", "http-methods":"GET", "unit": "second", "value": 1},
-    
-    {"uri-regex":".*/openshift/rate1.*", "http-methods":"POST PUT GET DELETE", "unit": "hour", "value": 5}, 
-    {"uri-regex":".*/openshift/rate2.*", "http-methods":"GET", "unit": "minute", "value": 3},
-    {"uri-regex":".*/openshift.*", "http-methods":"GET", "unit": "second", "value": 1}
+    {"uri-regex":".*/nova.*", "http-methods":"GET", "unit": "second", "value": 1}
   ]
  
 }
