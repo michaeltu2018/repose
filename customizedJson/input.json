@@ -1,6 +1,7 @@
 /*
  * Below is the json file syntax that will be passed from user input.
  * It will forward all traffic from http://100.0.0.1:8080/nova/* to http://jsonplaceholder.typicode.com:80/*
+ *                                  (ip get from Scalr farm; port number set to 8080)
  * It will also have 3 rate limit: 
  *      1. http:/jsonplaceholder.typicode.com:80/rate1, which is 5 times per hour
  *      2. http:/jsonplaceholder.typicode.com:80/rate2, which is 3 times per minute
