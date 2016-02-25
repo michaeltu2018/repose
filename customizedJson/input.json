@@ -6,7 +6,7 @@
  *      2. http:/jsonplaceholder.typicode.com:80/rate2, which is 3 times per minute
  *      3. http:/jsonplaceholder.typicode.com:80/*, which is 1 time per second
  * 
- * ".*/openshift.*" is similar to ".*/nova.*"
+ * The rate limit setting for ".*/openshift.*" is similar to ".*/nova.*"
  */
 
 {
