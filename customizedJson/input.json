@@ -2,7 +2,7 @@
 
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
-  "gatewayIp": "172.110.1.1",
+  "gatewayIp": "will be retrieved from scalr farm",
   "gatewayPortNumber": 8080,
   "gatewaySubDir":".*/nova.*",
   "rateLimiting":[
