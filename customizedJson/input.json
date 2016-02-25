@@ -1,0 +1,13 @@
+{
+
+  "dstIp": "jsonplaceholder.typicode.com",
+  "dstPortnumber": 80,
+  "gatewayIp": "172.110.1.1",
+  "gatewayPortNumber": 8080,
+  "gatewaySubDir":".*/nova.*",
+  "rateLimiting":[
+    {"uri-regex":".*/nova/rate1.*", "http-methods":"POST PUT GET DELETE", "unit": "hour", "value": 5}, 
+    {"uri-regex":".*/nova/rate2.*", "http-methods":"GET", "unit": "minute", "value": 3}
+ ]
+
+}
