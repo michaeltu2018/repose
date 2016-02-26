@@ -15,8 +15,8 @@
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
   "rateLimiting":[
-    {"uriRegex":"/posts/1", "httpMethods":"GET", "unit": "hour", "value": 1}, 
-    {"uriRegex":"/posts/2", "httpMethods":"GET", "unit": "minute", "value": 2},
+    {"uri":"*", "uriRegex":"/(.*)/1", "httpMethods":"GET", "unit": "hour", "value": 1}, 
+    {"uri":"/posts/2", "uriRegex":"/posts/2", "httpMethods":"GET", "unit": "minute", "value": 2},
     {"uriRegex":"/.*", "httpMethods":"GET", "unit": "second", "value": 5}
   ]
  
