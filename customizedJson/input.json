@@ -3,9 +3,9 @@
  * It will forward all traffic from http://100.0.0.1:8080/nova/* to http://jsonplaceholder.typicode.com:80/*
  *                                  (ip get from Scalr farm; port number set to 8080)
  * It will also have 3 rate limit: 
- *      1. http:/jsonplaceholder.typicode.com:80/rate1, which is 5 times per hour
- *      2. http:/jsonplaceholder.typicode.com:80/rate2, which is 3 times per minute
- *      3. http:/jsonplaceholder.typicode.com:80/*, which is 1 time per second
+ *      1. http:/jsonplaceholder.typicode.com:80/posts/1, which is 1 times per hour
+ *      2. http:/jsonplaceholder.typicode.com:80/posts/2, which is 2 times per minute
+ *      3. http:/jsonplaceholder.typicode.com:80/*, which is 5 time per second
  * 
  */
 
@@ -15,9 +15,9 @@
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
   "rateLimiting":[
-    {"uriRegex":".*/nova/rate1.*", "httpMethods":"POST PUT GET DELETE", "unit": "hour", "value": 5}, 
-    {"uriRegex":".*/nova/rate2.*", "httpMethods":"GET", "unit": "minute", "value": 3},
-    {"uriRegex":".*/nova.*", "httpMethods":"GET", "unit": "second", "value": 1}
+    {"uriRegex":"/posts/1", "httpMethods":"GET", "unit": "hour", "value": 1}, 
+    {"uriRegex":"/posts/2", "httpMethods":"GET", "unit": "minute", "value": 2},
+    {"uriRegex":"/.*", "httpMethods":"GET", "unit": "second", "value": 5}
   ]
  
 }
