@@ -8,10 +8,6 @@
     -->
     <request-endpoint uri-regex="/*" include-absolute-limits="false"/>
 
-    <global-limit-group>
-        <limit id="global" uri="*" uri-regex=".*/nova.*" value="5" unit="HOUR"/>
-    </global-limit-group>
-
     <!-- Limits for all other requests -->
     <limit-group id="limited" groups="limited" default="true">
         <limit id="all" uri="*" uri-regex="/.*" http-methods="POST PUT GET DELETE" unit="HOUR" value="5"/>
