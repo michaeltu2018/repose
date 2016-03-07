@@ -9,4 +9,4 @@ curl -H "Content-Type: application/json" -X POST -d '{
     {"uriRegex":"/.*", "httpMethods":"GET", "unit": "second", "value": 5}
   ]
  
-}' http://localhost:8080/userinput
+}' http://localhost:8080/userinput -H "X-User-ID:123"
