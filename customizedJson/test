@@ -1,5 +1,16 @@
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "temp_farm_ID_1457383923267",
+  "farmId": "temp_farm_ID_1457478802173",
+  "farmURl": "abc.com",
+  "farmName": "myFarm",
+  "list_of_users_id":[
+    "123",
+    "456"
+  ]
+}' http://localhost:8080/userfarms -H "X-User-ID:123"
+
+
+curl -H "Content-Type: application/json" -X POST -d '{
+  "farmId": "temp_farm_ID_1457478802173",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
@@ -11,15 +22,6 @@ curl -H "Content-Type: application/json" -X POST -d '{
  
 }' http://localhost:8080/userinput -H "X-User-ID:123"
 
+curl http://localhost:8080/userfarms/temp_farm_ID_1457478802173 -H "X-User-ID:123"
 
-curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "abc",
-  "farmURl": "abc.com",
-  "farmName": "myFarm",
-  "list_of_users_id":[
-    "123",
-    "456"
-  ]
-}' http://localhost:8080/userfarms -H "X-User-ID:123"
-
-curl http://localhost:8080/userfarms/abc -H "X-User-ID:123"
+curl http://localhost:8080/userfarms/temp_farm_ID_1457478802173/dist-datastore.cfg.xml
