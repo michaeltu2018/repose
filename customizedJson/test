@@ -24,3 +24,6 @@ curl -H "Content-Type: application/json" -X POST -d '{
 curl http://localhost:8080/userfarms/90 -H "X-User-Name:123"
 
 curl http://localhost:8080/userfarms/90/system-model.cfg.xml
+curl http://localhost:8080/userfarms/90/destination-router.cfg.xml
+curl http://localhost:8080/userfarms/90/dist-datastore.cfg.xml
+curl http://localhost:8080/userfarms/90/rate-limiting.cfg.xml
