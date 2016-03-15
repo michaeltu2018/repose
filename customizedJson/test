@@ -5,11 +5,11 @@ curl -H "Content-Type: application/json" -X POST -d '{
     "123",
     "456"
   ]
-}' http://localhost:8080/userfarms -H "X-User-Name:123"
+}' http://jump1.ash2.symcpe.net:8080/userfarms -H "X-User-Name:123"
 
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "90",
+  "farmId": "93",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
@@ -19,7 +19,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
     {"uriRegex":"/.*", "httpMethods":"GET", "unit": "second", "value": 5}
   ]
  
-}' http://localhost:8080/userfarms/userinput -H "X-User-Name:123"
+}' http://10.17.5.24:8080/userfarms/userinput -H "X-User-Name:123"
 
 curl http://localhost:8080/userfarms/90 -H "X-User-Name:123"
 
