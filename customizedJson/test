@@ -9,7 +9,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "82",
+  "farmId": "90",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
@@ -21,6 +21,6 @@ curl -H "Content-Type: application/json" -X POST -d '{
  
 }' http://localhost:8080/userfarms/userinput -H "X-User-Name:123"
 
-curl http://localhost:8080/userfarms/71 -H "X-User-Name:123"
+curl http://localhost:8080/userfarms/90 -H "X-User-Name:123"
 
-curl http://localhost:8080/userfarms/71/system-model.cfg.xml
+curl http://localhost:8080/userfarms/90/system-model.cfg.xml
