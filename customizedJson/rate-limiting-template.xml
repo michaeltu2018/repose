@@ -10,9 +10,9 @@
 
     <!-- Limits for all other requests -->
     <limit-group id="limited" groups="limited" default="true">
-        <limit id="one" uri="*" uri-regex="/(.*)/1" http-methods="GET" unit="HOUR" value="1"/>
-        <limit id="two" uri="/posts/2" uri-regex="/posts/2" http-methods="GET" unit="MINUTE" value="2"/>
-        <limit id="all" uri="*" uri-regex="/.*" http-methods="POST PUT GET DELETE" unit="HOUR" value="5"/>
+        <limit id="one" uri="*" uri-regex="(.*)/1" http-methods="GET" unit="HOUR" value="2"/>
+        <limit id="two" uri="*" uri-regex=".*posts/2" http-methods="GET" unit="MINUTE" value="4"/>
+        <limit id="all" uri="*" uri-regex=".*posts/(.*)" http-methods="POST PUT GET DELETE" unit="MINUTE" value="5"/>
     </limit-group>
 
     <!-- Limits for WhiteListed IPs -->
