@@ -11,7 +11,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 //10.50.144.195
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "100",
+  "farmId": "102",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
