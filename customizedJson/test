@@ -11,7 +11,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 //10.50.144.195
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "123",
+  "farmId": "137",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
@@ -23,20 +23,19 @@ curl -H "Content-Type: application/json" -X POST -d '{
  
 }' http://localhost:8080/userfarms/userinput -H "X-User-Name:123"
 
-curl http://localhost:8080/userfarms/123/input.json
+curl http://localhost:8080/userfarms/136/input.json
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "114",
+  "farmId": "136",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
+  "gatewaySubDir": ".*/nova.*",
   "rateLimiting":[
-    {"uri":"*", "uriRegex":".*/1", "httpMethods":"GET", "unit": "HOUR", "value": 2}, 
-    {"uri":"*", "uriRegex":".*posts/2", "httpMethods":"GET", "unit": "MINUTE", "value": 4},
-    {"uri":"*", "uriRegex":".*posts/(.*)", "httpMethods":"GET", "unit": "MINUTE", "value": 5}
+    {"uri":"*", "uriRegex":".*/1", "httpMethods":"GET", "unit": "HOUR", "value": 8}, 
+    {"uri":"*", "uriRegex":".*posts/2", "httpMethods":"GET", "unit": "MINUTE", "value": 3}
   ]
  
-}' http://localhost:8080/userfarms/userinput -H "X-User-Name:123"
-
+}' http://localhost:8080/userfarms/updateRateLimit -H "X-User-Name:123"
 
 curl http://localhost:8080/userfarms/100 -H "X-User-Name:123"
 
