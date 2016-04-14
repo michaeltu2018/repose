@@ -7,6 +7,8 @@
  *      2. http:/jsonplaceholder.typicode.com:80/posts/2, which is 2 times per minute
  *      3. http:/jsonplaceholder.typicode.com:80/*, which is 5 time per second
  * 
+ 
+ curl http://100.81.69.206:8080/posts/1
  */
 
 {
