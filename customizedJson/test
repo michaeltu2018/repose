@@ -11,7 +11,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 //10.50.144.195
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "34",
+  "farmId": "64",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
@@ -39,7 +39,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 
 curl http://localhost:8080/userfarms/100 -H "X-User-Name:123"
 
-curl http://localhost:8080/userfarms/123/system-model.cfg.xml
+curl http://localhost:8080/userfarms/65/system-model.cfg.xml
 curl http://10.17.5.24:8080/userfarms/34/destination-router.cfg.xml
 curl http://10.50.144.195:8080/userfarms/100/dist-datastore.cfg.xml
 curl http://localhost:8080/userfarms/123/rate-limiting.cfg.xml
