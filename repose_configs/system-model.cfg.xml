@@ -8,6 +8,8 @@
         </nodes>
         <filters>
 	    <filter name="ip-identity" />
+	    <!-- uri stripper and destination router not necessary, uri stripper is useless if no subdirectory set. 
+	    destination router will go default directly if there is only one-->
             <filter name="uri-stripper" uri-regex=".*/openshift.*"/>
             <filter name="uri-stripper" uri-regex=".*/nova.*"/>
             <filter name="destination-router" uri-regex=".*/openshift.*" configuration="destination-router.cfg2.xml" />
