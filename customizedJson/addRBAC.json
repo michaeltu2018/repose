@@ -7,3 +7,15 @@ curl -H "Content-Type: application/json" -X POST -d '{
   ]
 }' http://localhost:8080/userfarms/addRBAC -H "X-User-Name:123"
 
+
+generated simple-rbac.cfg.xml:
+<?xml version="1.0" encoding="UTF-8"?>
+<simple-rbac xmlns="http://docs.openrepose.org/repose/simple-rbac/v1.0"
+             roles-header-name="X-ROLES"
+             mask-rax-roles-403="false">
+    <resources>
+/path/to/this   GET     role1,role2,role3,role4
+/path/to/this   PUT     role1,role2,role3
+/path/to/this   POST    role1,role2
+    </resources>
+</simple-rbac>
