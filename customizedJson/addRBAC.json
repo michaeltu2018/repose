@@ -3,7 +3,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
   "rbac":[
     {"path":"/path/to/this", "httpMethods":"GET", "roles": "role1,role2,role3,role4"}, 
     {"path":"/path/to/this", "httpMethods":"PUT", "roles": "role1,role2,role3"},
-    {"path":"/path/to/this", "httpMethods":"POST", "roles": "role1,role2"},
+    {"path":"/path/to/this", "httpMethods":"POST", "roles": "role1,role2"}
   ]
 }' http://100.81.70.54:8080/userfarms/updateRateLimit -H "X-User-Name:123"
 
