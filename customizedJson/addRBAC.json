@@ -19,3 +19,5 @@ generated simple-rbac.cfg.xml:
 /path/to/this   POST    role1,role2
     </resources>
 </simple-rbac>
+
+ANY and ALL act as special wildcards for both HTTP methods and roles. When used for HTTP methods it is shorthand for the four basic REST methods (GET, PUT, POST, & DELETE).
