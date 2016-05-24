@@ -1,0 +1,8 @@
+curl -H "Content-Type: application/json" -X POST -d '{
+  "farmId":"abc", 
+  "rateLimiting":[
+    {"uri":"*", "uriRegex":".*/1", "httpMethods":"GET", "unit": "HOUR", "value": 2}, 
+    {"uri":"*", "uriRegex":".*posts/2", "httpMethods":"GET", "unit": "MINUTE", "value": 4},
+    {"uri":"*", "uriRegex":".*posts/(.*)", "httpMethods":"GET", "unit": "MINUTE", "value": 5}
+  ]
+}' http://localhost:8080/userfarms/addRateLimit -H "X-User-Name:123"
