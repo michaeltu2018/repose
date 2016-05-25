@@ -1,12 +1,21 @@
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId":"abc", 
-  "rbac":[
+  "farmId":"523", 
+  "rbacProperty":[
     {"path":"/path/to/this", "httpMethods":"GET", "roles": "role1,role2,role3,role4"}, 
     {"path":"/path/to/this", "httpMethods":"PUT", "roles": "role1,role2,role3"},
     {"path":"/path/to/this", "httpMethods":"POST", "roles": "role1,role2"}
   ]
 }' http://localhost:8080/userfarms/addRBAC -H "X-User-Name:123"
 
+
+curl -H "Content-Type: application/json" -X POST -d '{
+  "farmId":"523", 
+  "rbacProperty":[
+    {"path":"/path/txso/this", "httpMethods":"GET", "roles": "role1,role2"}, 
+    {"path":"/path/to/tssshis", "httpMethods":"PUT", "roles": "role1,role3"},
+    {"path":"/path/to/thixxxs", "httpMethods":"POST", "roles": "role1,role8,role2"}
+  ]
+}' http://localhost:8080/userfarms/updateRBAC -H "X-User-Name:123"
 
 generated simple-rbac.cfg.xml:
 <?xml version="1.0" encoding="UTF-8"?>
