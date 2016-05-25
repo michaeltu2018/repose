@@ -1,27 +1,22 @@
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmURl": "abc.com",
-  "farmName": "esd",
+  "farmName": "erds",
   "list_of_users_id":[
     "123",
     "456"
   ]
-}' http://100.81.70.54:8080/userfarms -H "X-User-Name:123"
+}' http://localhost:8080/userfarms -H "X-User-Name:123"
 
 
 //10.50.144.195
 
 curl -H "Content-Type: application/json" -X POST -d '{
-  "farmId": "512",
+  "farmId": "523",
   "dstIp": "jsonplaceholder.typicode.com",
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
-  "rateLimiting":[
-    {"uri":"*", "uriRegex":".*/1", "httpMethods":"GET", "unit": "HOUR", "value": 2}, 
-    {"uri":"*", "uriRegex":".*posts/2", "httpMethods":"GET", "unit": "MINUTE", "value": 4},
-    {"uri":"*", "uriRegex":".*posts/(.*)", "httpMethods":"GET", "unit": "MINUTE", "value": 5}
-  ]
- 
-}' http://100.81.70.54:8080/userfarms/userinput -H "X-User-Name:123"
+  "hasRateLimitingFilter": "false",
+  "hasRbacFilter" : "false"
+}' http://localhost:8080/userfarms/userinput -H "X-User-Name:123"
 
 curl http://localhost:8080/userfarms/136/input.json
 
@@ -39,10 +34,11 @@ curl -H "Content-Type: application/json" -X POST -d '{
 
 curl http://localhost:8080/userfarms/100 -H "X-User-Name:123"
 
-curl http://localhost:8080/userfarms/148/system-model.cfg.xml
+curl http://localhost:8080/userfarms/523/system-model.cfg.xml
 curl http://10.17.5.24:8080/userfarms/34/destination-router.cfg.xml
 curl http://10.50.144.195:8080/userfarms/100/dist-datastore.cfg.xml
-curl http://localhost:8080/userfarms/123/rate-limiting.cfg.xml
+curl http://localhost:8080/userfarms/523/rate-limiting.cfg.xml
+curl http://localhost:8080/userfarms/523/simple-rbac.cfg.xml
 curl http://localhost:8080/userfarms/499/openstack-identity-v3.cfg.xml
 
 
