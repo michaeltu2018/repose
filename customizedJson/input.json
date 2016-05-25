@@ -25,3 +25,12 @@
 }
 
 
+{
+  "farmId":"abc", 
+  "dstIp": "jsonplaceholder.typicode.com",
+  "dstPortnumber": 80,
+  "gatewaySubDir": ".*/nova.*",
+  "hasRateLimitingFilter": "false",
+  "hasRbacFilter" : "false"
+}
+
