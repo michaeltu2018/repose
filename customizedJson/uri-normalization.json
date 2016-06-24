@@ -3,20 +3,19 @@
     {
       "uriRegex":"/servers/(.*)", "httpMethods":"GET", "alphabetize":"true", 
       "params":[
-        {"name":"limit", "multiplicity":"1", "caseSentitive":"false"}
+        {"name":"limit", "multiplicity":"1", "caseSentitive":"false"},
         {"name":"offset", "multiplicity":"1"}
       ]
-    }
+    },
     {
       "uriRegex":"/servers2/(.*)", "httpMethods":"GET", "alphabetize":"true", 
       "params":[
-        {"name":"limit2", "multiplicity":"1", "caseSentitive":"false"}
+        {"name":"limit2", "multiplicity":"1", "caseSentitive":"false"},
         {"name":"offset2", "multiplicity":"1"}
       ]
     }
   ]
 }
-
 -->
 
 
