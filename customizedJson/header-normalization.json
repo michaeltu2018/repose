@@ -11,6 +11,15 @@
       }
     },
     {
+      "uriRegex":"/resource/(.*)", "httpMethods":"POST PUT", 
+      "whitelist":{
+        "id":"modification",
+        "headerlist":[
+         {"headerId":"X-Modify"}
+        ]
+      }
+    },
+    {
       "blacklist":{
         "id":"rate-limit-headers",
         "headerlist":[
