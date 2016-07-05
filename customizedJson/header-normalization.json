@@ -14,8 +14,8 @@
       "blacklist":{
         "id":"rate-limit-headers",
         "headerlist":[
-         {"name":"limit2", "multiplicity":"1", "caseSentitive":"false"},
-         {"name":"offset2", "multiplicity":"1"}
+         {"headerId":"X-PP-User"},
+         {"headerId":"X-PP-Groups"},
         ]
       }
     }
