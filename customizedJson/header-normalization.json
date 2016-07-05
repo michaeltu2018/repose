@@ -2,22 +2,22 @@
   "target":[
     {
       "uriRegex":"/servers/(.*)", "httpMethods":"GET", 
-      "whitelist":[
+      "whitelist":{
         "id":"creds",
         "headerlist":[
          {"headerId":"X-Auth-Key"},
          {"headerId":"X-Auth-User"}
         ]
-      ]
+      }
     },
     {
-      "blacklist":[
+      "blacklist":{
         "id":"rate-limit-headers",
         "headerlist":[
          {"name":"limit2", "multiplicity":"1", "caseSentitive":"false"},
          {"name":"offset2", "multiplicity":"1"}
         ]
-      ]
+      }
     }
   ]
 }
