@@ -31,6 +31,7 @@
   "dstPortnumber": 80,
   "gatewaySubDir": ".*/nova.*",
   "hasRateLimitingFilter": "false",
-  "hasRbacFilter" : "false"
+  "hasRbacFilter" : "false",
+  "hasHeaderNormalizationFilter" : "false"
 }
 
