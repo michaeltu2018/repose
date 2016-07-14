@@ -1,0 +1,34 @@
+
+{
+  "header":[
+    {
+      "originalName":"Content-Type",
+      "newName":"rax-content-type"
+    },
+    {
+      "originalName":"Content-Length",
+      "newName":"rax-content-length not-rax-content-length something-else",
+      "removeOriginal":"true"
+    },
+    {
+      "originalName":"X-Original",
+      "newName":"X-New",
+      "quality":"0.7",
+      "splittable":"true"
+    }
+  ]
+}
+
+
+
+
+=>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<header-translation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://docs.openrepose.org/repose/header-translation/v1.0 ../config/header-translation.xsd" xmlns="http://docs.api.rackspacecloud.com/repose/header-translation/v1.0">
+    <header original-name="Content-Type" new-name="rax-content-type"/>
+    <header original-name="Content-Length" new-name="rax-content-length not-rax-content-length something-else" remove-original="true"/>
+    <header original-name="X-Original" new-name="X-New" quality="0.7" splittable="true"/>
+</header-translation>
