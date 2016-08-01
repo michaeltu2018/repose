@@ -1,0 +1,57 @@
+{
+  "uriPathRegex":"/servers/(.*)", "httpMethods":"GET", 
+  "response":[
+    {
+      "sub": {
+          "name":"json",
+          "content":"$.service.link"
+        }
+    },
+    {
+      "sub": {
+          "name":"json",
+          "tokenIndex":"1",
+          "linkMismatchAction":"fail",
+          "content":">$.other-service.link"
+      }
+    },
+    {
+      "sub": {
+        "name":"xml",
+          "namespace":{
+            "name":"foo",
+            "url":"http://foo.bar"
+          },
+          "xpath":{
+            "tokenIndex":"1",
+            "linkMismatchAction":"fail",
+            "xpath":"/service/link"
+          }
+      }
+    },
+    {
+      "sub": {
+        "name":"xml",
+          "namespace":{
+            "name":"foo",
+            "url":"http://foo.bar"
+          },
+          "namespace":{
+            "name":"bar",
+            "url":"http://bar.bar"
+          },
+          "namespace":{
+            "name":"buzz",
+            "url":"http://buzz.bar"
+          },
+          "xpath":{
+            "tokenIndex":"1",
+            "linkMismatchAction":"fail",
+            "xpath":"/other-service/link"
+          }
+      }
+    }
+    
+  
+  ]
+}
