@@ -1,5 +1,5 @@
 {
-  "uriPathRegex":"/servers/(.*)", "httpMethods":"GET", 
+  "rewriteLocation":"true", "tokenIndex":"1", "uriPathRegex":"/servers/(.*)", "httpMethods":"GET", 
   "response":[
     {
       "sub": {
