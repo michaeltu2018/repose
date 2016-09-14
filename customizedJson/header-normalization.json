@@ -68,3 +68,38 @@
     </header-filters>
 
 </header-normalization>
+
+
+curl -H "Content-Type: application/json" -X POST -d '{
+  "target":[
+    {
+      "uriRegex":"/servers/(.*)", "httpMethods":"GET", 
+      "whitelist":{
+        "id":"creds",
+        "headerlist":[
+         {"headerId":"X-Auth-Key"},
+         {"headerId":"X-Auth-User"}
+        ]
+      }
+    },
+    {
+      "uriRegex":"/resource/(.*)", "httpMethods":"POST PUT", 
+      "whitelist":{
+        "id":"modification",
+        "headerlist":[
+         {"headerId":"X-Modify"}
+        ]
+      }
+    },
+    {
+      "blacklist":{
+        "id":"rate-limit-headers",
+        "headerlist":[
+         {"headerId":"X-PP-User"},
+         {"headerId":"X-PP-Groups"},
+        ]
+      }
+    }
+  ]
+}'
+http://localhost:8080/userfarms/{farmId}/headerNormalization/headerFilter -H "X-User-Name:123"
